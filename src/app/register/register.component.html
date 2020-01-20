@@ -1,0 +1,42 @@
+<app-top-bar></app-top-bar>
+<div class="col-md-4 offset-md-4 mt-3">
+  <h2>Criar conta</h2>
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="firstName">Nome</label>
+          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">Por favor, informe seu nome</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="lastName">E-mail</label>
+          <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">E-mail precisa ser informado</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="username">Nome de usuário</label>
+          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Você precisa informar um nome de usuário</div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Senha de acesso</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Por favor, informe sua senha.</div>
+              <div *ngIf="f.password.errors.minlength">A sua senha precisa ter no mínimo 6 caracteres</div>
+          </div>
+      </div>
+      <div class="form-group float-right">
+          <a routerLink="/login" class="btn btn-link">Cancel</a>
+          <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Criar conta
+          </button>
+      </div>
+  </form>
+</div>

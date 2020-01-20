@@ -1,4 +1,24 @@
 <mat-toolbar>
   <span><a href="#" routerLink="/">Silvertec informática</a></span>
   <span class="spacer"></span>
+  <span *ngIf="currentUser else login">
+    <ul>
+      <li><a routerLink="/">Início</a></li>
+      <li *ngIf="currentUser.isAdmin else userTpl" ><a routerLink="/orders">Todos os Pedidos</a></li>
+      <li><button mat-fab (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+      </button></li>
+    </ul>
+  </span>
 </mat-toolbar>
+<ng-template #login>
+  <ul>
+    <li><button mat-fab routerLink="/login">
+      <i class="fas fa-sign-in-alt"></i>
+    </button></li>
+  </ul>
+</ng-template>
+<ng-template #userTpl>
+  <li><a routerLink="/user/{{currentUser.id}}/orders">Meus Pedidos</a></li>
+</ng-template>
+
