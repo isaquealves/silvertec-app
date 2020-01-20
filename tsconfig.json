@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": [
-          "app/*"
+          "app/*",
+          "environments/*"
       ]
     }
   },
@@ -30,3 +31,4 @@
     "strictInjectionParameters": true
   }
 }
+
