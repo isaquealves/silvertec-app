@@ -1,9 +1,9 @@
-import { environment } from './../../environments/environment';
+import { environment } from '@/environment';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '@/_models';
 import { BehaviorSubject, Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
+import {map, timeout} from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root'})
 export class AuthenticationService {
@@ -22,6 +22,7 @@ export class AuthenticationService {
   }
 
   login(username, password) {
+
     return this.http.post<any>(`${environment.apiUrl}/users/auth`, {username, password}).pipe(map(user => {
       localStorage.setItem('currentUser', JSON.stringify(user));
       this.currentUserSubject.next(user);
@@ -30,7 +31,7 @@ export class AuthenticationService {
   }
 
   logout() {
-    localStorage.remoteItem('currentUser');
+    localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
 }

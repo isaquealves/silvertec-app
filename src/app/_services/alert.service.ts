@@ -1,5 +1,5 @@
 import { Router, NavigationStart } from '@angular/router';
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
