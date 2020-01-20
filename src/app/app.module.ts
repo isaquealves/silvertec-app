@@ -15,7 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from '@/register/register.component';
 import { fakeBackendProvider } from './_helpers';
 import {AlertComponent} from '@/components/alert';
-
+import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComponent } from '@/_computer-parts';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,11 @@ import {AlertComponent} from '@/components/alert';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    ProcessorsComponent,
+    MainboardsComponent,
+    MemoryComponent,
+    GraphicsComponent
   ],
   imports: [
     BrowserModule,
