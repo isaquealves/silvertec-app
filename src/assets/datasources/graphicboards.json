@@ -1,0 +1,20 @@
+[
+  {
+    "id": "7f96a6fa-4ac3-4224-8a5b-c74287bf7aa1",
+    "manufacturer": "Gigabyte",
+    "model": "Geforce GTX 1060 6GB",
+    "memory": 6
+  },
+  {
+    "id": "0d1f474e-aee4-4387-a735-b82ba700e0f9",
+    "manufacturer": "PNY",
+    "model":"RTX 2060 6GB",
+    "memory":6
+  },
+  {
+    "id": "aeda6e03-47a1-458b-9c17-d480e8dc7fa3",
+    "manufacturer": "Radeon",
+    "model":"RX 580 8GB",
+    "memory":8
+  }
+]

@@ -21,9 +21,14 @@
     "paths": {
       "@/*": [
           "app/*",
-          "environments/*"
+          "environments/*",
+      ],
+      "@data/*": [
+        "assets/datasources/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
 
   "angularCompilerOptions": {

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "03e53ce0-4ebd-47ae-838b-258967c369a7",
+    "name": "Hiper X 4GB",
+    "size":4
+   },
+   {
+    "id": "f2108473-72ec-49c6-a049-f3b7c882397b",
+    "name": "Hiper X 8GB",
+    "size":8
+   },
+   {
+    "id": "71c1276e-8138-476b-9834-1be1c4deea0f",
+    "name": "Hiper X 16GB",
+    "size":16
+   },
+   {
+    "id": "7c8cbe94-d59f-4eee-a3a5-6f3feb3d52e9",
+    "name": "Hiper X 32GB",
+    "size":32
+   },
+   {
+    "id": "b5449973-5a81-4952-b389-ad946ebaeaea",
+    "name": "Hiper X 64GB",
+    "size": 64
+   }
+]
