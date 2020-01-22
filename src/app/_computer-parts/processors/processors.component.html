@@ -1,1 +1,15 @@
+<div id="processor-selection" [formGroup]="ordForm">
+  <div class="form-group" formGroupName="processorStep">
+    <mat-form-field>
+      <mat-label for="processor">Processadores</mat-label>
+      <mat-select [(value)]="proc" name="processor" formControlName="processor">
+          <mat-option *ngFor="let processor of processors" [value]="processor" >{{ processor.name}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <span class="float-left"><button type="button" class="btn btn-primary" matStepperNext (click)="submitProcessor()">Prosseguir</button></span>
+</div>
+
 
