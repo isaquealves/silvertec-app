@@ -1,0 +1,32 @@
+<div id="computerorder" class="col-md-12 container">
+  <form id="ordForm" [formGroup]="orderForm">
+    <mat-horizontal-stepper #orderStepper [linear]="isLinear">
+      <mat-step formGroupName="processorStep"
+        [stepControl]="orderForm.get('processorStep')">
+        <ng-template matStepLabel>Selecione um processador</ng-template>
+        <app-processors [ordForm]="orderForm"></app-processors>
+      </mat-step>
+      <mat-step formGroupName="mainboardStep"
+        [stepControl]="orderForm.get('mainboardStep')">
+        <ng-template matStepLabel> Selecione uma placa-mãe</ng-template>
+        <app-mainboards [ordForm]="orderForm"></app-mainboards>
+      </mat-step>
+      <mat-step formGroupName="memoryStep"
+      [stepControl]="orderForm.get('memoryStep')">
+        <ng-template matStepLabel>Selecione os módulos de memória</ng-template>
+        <app-memory [ordForm]="orderForm"></app-memory>
+      </mat-step>
+      <mat-step formGroupName="graphicsStep"
+      [stepControl]="orderForm.get('graphicsStep')">
+        <ng-template matStepLabel>Selecione a placa de vídeo</ng-template>
+        <app-graphics [ordForm]="orderForm"></app-graphics>
+      </mat-step>
+      <mat-step formGroupName="reviewAndSubmit"
+      [stepControl]="orderForm.get('reviewAndSubmit')">
+        <ng-template matStepLabel>Revisar e enviar pedido</ng-template>
+
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
+</div>
+
