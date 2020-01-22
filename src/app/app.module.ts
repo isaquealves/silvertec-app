@@ -16,6 +16,7 @@ import { RegisterComponent } from '@/register/register.component';
 import { fakeBackendProvider } from '@/_helpers';
 import {AlertComponent} from '@/components/alert';
 import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComponent, ComputerpartsComponent } from '@/_computer-parts';
+import { JoinPipe } from './join.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComp
     MainboardsComponent,
     MemoryComponent,
     GraphicsComponent,
-    ComputerpartsComponent
+    ComputerpartsComponent,
+    JoinPipe
   ],
   imports: [
     BrowserModule,

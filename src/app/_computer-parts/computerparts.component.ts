@@ -1,3 +1,4 @@
+import { OrderService } from '@/_services';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { OnInit, Component } from '@angular/core';
 
@@ -10,7 +11,9 @@ export class ComputerpartsComponent implements OnInit {
   isLinear = true;
   orderForm: FormGroup;
   proc: any;
-  constructor() {}
+  constructor(
+    private orderService: OrderService
+  ) {}
 
   ngOnInit() {
     this.orderForm = new FormGroup({
@@ -30,5 +33,19 @@ export class ComputerpartsComponent implements OnInit {
         agreed: new FormControl('', Validators.required)
       })
     });
+  }
+
+  submit() {
+    const proc = this.orderForm.get('processorStep').get('processor').value;
+    const board = this.orderForm.get('mainboardStep').get('mainboard').value;
+    const memory = this.orderForm.get('memoryStep').get('memorymodules').value;
+    const graphics = this.orderForm.get('graphicsStep').get('graphicboards').value;
+    const data = {
+      processor: proc,
+      mainboard: board,
+      memorymodules: memory,
+      graphicboard: graphics
+    };
+    this.orderService.submitOrder(data);
   }
 }

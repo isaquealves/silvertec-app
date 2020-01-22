@@ -2,14 +2,18 @@
   <div class="form-group" formGroupName="processorStep">
     <mat-form-field>
       <mat-label for="processor">Processadores</mat-label>
-      <mat-select [(value)]="proc" name="processor" formControlName="processor">
+      <mat-select [(value)]="proc" name="processor" formControlName="processor" (selectionChange)="onChange($event)">
           <mat-option *ngFor="let processor of processors" [value]="processor" >{{ processor.name}}</mat-option>
       </mat-select>
       </mat-form-field>
   </div>
 </div>
 <div class="row">
-  <span class="float-left"><button type="button" class="btn btn-primary" matStepperNext (click)="submitProcessor()">Prosseguir</button></span>
+  <span class="float-left"><button type="button" class="btn btn-primary btn-lg" matStepperNext (click)="submitProcessor()">
+    Prosseguir
+    <i class='fas fa-arrow-circle-right'></i>
+  </button>
+</span>
 </div>
 
 

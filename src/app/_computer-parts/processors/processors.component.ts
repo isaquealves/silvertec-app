@@ -1,3 +1,5 @@
+import { Processor } from '@/_models';
+import { ComputerPartsService } from './../../_services/computerparts.service';
 import { FormGroup } from '@angular/forms';
 import { ProcessorService } from '@/_services/processor.service';
 import { Component, OnInit, Input } from '@angular/core';
@@ -13,7 +15,8 @@ export class ProcessorsComponent implements OnInit {
   @Input() ordForm: FormGroup;
   proc: any;
   constructor(
-    private processorService: ProcessorService
+    private processorService: ProcessorService,
+    private cpService: ComputerPartsService
   ) { }
 
   ngOnInit() {
@@ -25,7 +28,10 @@ export class ProcessorsComponent implements OnInit {
       .pipe(first())
       .subscribe(processors => this.processors = processors);
   }
-
+  onChange(event){
+    const processor = event.value;
+    this.cpService.selectProcessor(processor);
+  }
   submitProcessor() {
     this.ordForm.get('processorStep').get('processor').markAsTouched();
     this.ordForm.get('processorStep').get('processor').updateValueAndValidity();

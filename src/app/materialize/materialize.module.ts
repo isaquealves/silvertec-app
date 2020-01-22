@@ -7,6 +7,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatInputModule} from '@angular/material';
 
 const NgMaterialComponents = [
   MatButtonModule,
@@ -15,7 +16,8 @@ const NgMaterialComponents = [
   MatStepperModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatInputModule
 ];
 
 @NgModule({

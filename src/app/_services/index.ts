@@ -5,3 +5,5 @@ export * from './processor.service';
 export * from './mainboard.service';
 export * from './memory.service';
 export * from './graphicboards.service';
+export * from './computerparts.service';
+export * from './order.service';
