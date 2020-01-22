@@ -13,9 +13,9 @@ import { HomeComponent } from '@/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from '@/register/register.component';
-import { fakeBackendProvider } from './_helpers';
+import { fakeBackendProvider } from '@/_helpers';
 import {AlertComponent} from '@/components/alert';
-import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComponent } from '@/_computer-parts';
+import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComponent, ComputerpartsComponent } from '@/_computer-parts';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComp
     ProcessorsComponent,
     MainboardsComponent,
     MemoryComponent,
-    GraphicsComponent
+    GraphicsComponent,
+    ComputerpartsComponent
   ],
   imports: [
     BrowserModule,
