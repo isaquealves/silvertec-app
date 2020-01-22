@@ -1,3 +1,4 @@
+import { OrderListComponent } from './order-list/order-list.component';
 import { AuthGuard } from '@/_helpers';
 import { OrderComponent } from '@/order/order.component';
 import { RegisterComponent } from '@/register/register.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent},
-  {path: 'orders', component: OrderComponent, canActivate: [AuthGuard] }
+  {path: 'orders', component: OrderComponent, canActivate: [AuthGuard] },
+  {path: 'user/:id/orders', component: OrderListComponent, pathMatch: 'prefix', canActivate: [AuthGuard]}
 ];
 
 @NgModule({

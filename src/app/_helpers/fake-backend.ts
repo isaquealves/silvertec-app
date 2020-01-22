@@ -31,8 +31,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
               return register();
           case url.endsWith('/users') && method === 'GET':
               return getUsers();
-          case url.match(/\/users\/\w+$/) && method === 'DELETE':
-              return deleteUser();
           case url.endsWith('/processors') && method === 'GET':
             return getProcessors();
           case url.endsWith('/mainboards') && method === 'GET':

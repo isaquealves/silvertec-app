@@ -18,6 +18,7 @@ import {AlertComponent} from '@/components/alert';
 import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComponent, ComputerpartsComponent } from '@/_computer-parts';
 import { JoinPipe } from './join.pipe';
 import { OrderComponent } from './order/order.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { OrderComponent } from './order/order.component';
     GraphicsComponent,
     ComputerpartsComponent,
     JoinPipe,
-    OrderComponent
+    OrderComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

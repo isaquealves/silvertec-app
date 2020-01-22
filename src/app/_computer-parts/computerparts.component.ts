@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { User } from '@/_models';
-import { OrderService, AuthenticationService } from '@/_services';
+import { OrderService, AuthenticationService, AlertService } from '@/_services';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { OnInit, Component } from '@angular/core';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-computerparts',
@@ -16,7 +18,9 @@ export class ComputerpartsComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private alertService: AlertService,
+    private router: Router
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
   }
@@ -53,6 +57,16 @@ export class ComputerpartsComponent implements OnInit {
       memorymodules: memory,
       graphicboard: graphics
     };
-    this.orderService.submitOrder(data);
+    this.orderService.submitOrder(data)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.alertService.success('Pedido realizado com sucesso', true);
+          this.router.navigate(['/orders']);
+        },
+        error => {
+          this.alertService.error(error);
+        }
+      );
   }
 }

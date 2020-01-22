@@ -12,15 +12,7 @@ export class UserService {
     private http: HttpClient
   ) {}
 
-  getAll() {
-    return this.http.get<User[]>(`${environment.apiUrl}/users`);
-  }
-
   signup(user: User) {
     return this.http.post(`${environment.apiUrl}/users`, user);
-  }
-
-  delete(id: v4String) {
-    return this.http.delete(`${environment.apiUrl}/users/${id}`);
   }
 }

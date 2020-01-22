@@ -30,7 +30,6 @@ export class GraphicsComponent implements OnInit {
   }
 
   submitGraphics() {
-    console.log(this.ordForm.value);
     this.ordForm.get('graphicsStep').get('graphicboard').markAsTouched();
     this.ordForm.get('graphicsStep').get('graphicboard').updateValueAndValidity();
   }
