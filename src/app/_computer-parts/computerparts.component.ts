@@ -1,4 +1,5 @@
-import { OrderService } from '@/_services';
+import { User } from '@/_models';
+import { OrderService, AuthenticationService } from '@/_services';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { OnInit, Component } from '@angular/core';
 
@@ -11,9 +12,14 @@ export class ComputerpartsComponent implements OnInit {
   isLinear = true;
   orderForm: FormGroup;
   proc: any;
+  currentUser: User;
+
   constructor(
-    private orderService: OrderService
-  ) {}
+    private orderService: OrderService,
+    private authenticationService: AuthenticationService
+  ) {
+    this.currentUser = this.authenticationService.currentUserValue;
+  }
 
   ngOnInit() {
     this.orderForm = new FormGroup({
@@ -41,6 +47,7 @@ export class ComputerpartsComponent implements OnInit {
     const memory = this.orderForm.get('memoryStep').get('memorymodules').value;
     const graphics = this.orderForm.get('graphicsStep').get('graphicboards').value;
     const data = {
+      user: this.currentUser,
       processor: proc,
       mainboard: board,
       memorymodules: memory,

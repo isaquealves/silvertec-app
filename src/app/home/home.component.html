@@ -3,10 +3,10 @@
   <h1>Monte seu computador</h1>
   <p *ngIf="currentUser">Olá, {{ currentUser.fullName}}, seja bem vindo!</p>
   <p>É aqui que vamos ajudar você a escolher os componentes para montar o seu computador.</p>
-  <p>Que tal começar escolhendo o processador?</p>
+  <p>Que tal começar agora?</p>
 </div>
-<div class="col-md-8 offset-md-2">
-  <app-computerparts></app-computerparts>
+<div class="col-md-8 offset-md-2 text-center">
+  <button class="btn btn-success btn-lg" style="padding:1em 4em"type="button" (click)="goOrder()">Vamos lá! <i class="fas fa-arrow-circle-right"></i></button>
 </div>
 
 
