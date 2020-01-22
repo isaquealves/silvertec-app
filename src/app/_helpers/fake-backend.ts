@@ -3,6 +3,10 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import {v4 as uuid_v4} from 'uuid';
+import processors from '@data/processors.json';
+import mainboards from '@data/mainboards.json';
+import memorymodules from '@data/memorymodules.json';
+import graphicboards from '@data/graphicboards.json';
 
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -29,12 +33,35 @@ export class FakeBackendInterceptor implements HttpInterceptor {
               return getUsers();
           case url.match(/\/users\/\w+$/) && method === 'DELETE':
               return deleteUser();
+          case url.endsWith('/processors') && method === 'GET':
+            return getProcessors();
+          case url.endsWith('/mainboards') && method === 'GET':
+            return getMainBoards();
+          case url.endsWith('/memorymodules') && method === 'GET':
+            return getMemory();
+          case url.endsWith('/graphicboards') && method === 'GET':
+            return getGraphicBoards();
           default:
               // pass through any requests not handled above
               return next.handle(request);
       }
     }
+    function getMemory() {
+      return ok(memorymodules);
+    }
 
+    function getGraphicBoards() {
+      return ok(graphicboards);
+    }
+
+    function getProcessors() {
+      return ok(processors);
+    }
+
+    function getMainBoards() {
+
+      return ok(mainboards);
+    }
       // route functions
 
     function authenticate() {
