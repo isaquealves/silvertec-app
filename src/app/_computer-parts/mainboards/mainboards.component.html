@@ -1,1 +1,14 @@
-<p>mainboards works!</p>
+<div id="mainboard-selection" [formGroup]="ordForm">
+  <div class="form-group" formGroupName="mainboardStep">
+    <mat-form-field>
+      <mat-label for="mainboard">Placas-mãe</mat-label>
+      <mat-select [(value)]="mboard" formControlName="mainboard">
+          <mat-option *ngFor="let board of mainboards" [value]="board" >{{ board.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <button type="button" class="btn btn-warning" matStepperPrevious>Voltar</button>
+  <button type="button" class="btn btn-primary" matStepperNext (click)="submitMainboard()">Prosseguir</button>
+</div>
