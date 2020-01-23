@@ -1,6 +1,7 @@
 import { User } from '@/_models';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthenticationService } from '@/_services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,9 @@ import { AuthenticationService } from '@/_services';
 })
 export class HomeComponent implements OnInit {
   currentUser: User;
-
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private router: Router,
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
   }
@@ -19,4 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  goOrder() {
+    this.router.navigate(['/orders']);
+  }
 }

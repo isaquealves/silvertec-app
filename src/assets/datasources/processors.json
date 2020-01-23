@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ab27f836-f73f-45bd-9c2c-509f1a8da42a",
+    "name":"Processador Intel Core i5",
+    "manufacturer": "Intel"
+  },
+  {
+    "id": "25fa615a-3ddd-471b-bbd4-cd468ac7bbf8",
+    "name":"Processador Intel Core i7",
+    "manufacturer": "Intel"
+  },
+  {
+    "id": "429a7439-07a2-4bb7-9873-62d0365a64fd",
+    "name":"Processador AMD Athlon",
+    "manufacturer": "AMD"
+  },
+  {
+    "id": "5df234a5-bd86-4e9b-a688-6bbdb579ab30",
+    "name":"Processador AMD Ryzen 7",
+    "manufacturer": "AMD"
+  }
+]

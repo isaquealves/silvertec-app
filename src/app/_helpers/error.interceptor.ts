@@ -3,7 +3,6 @@ import { AuthenticationService } from '@/_services';
 import { HttpInterceptor, HttpRequest, HttpEvent, HttpHandler } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import * as debug from 'debug';
 
 @Injectable()
 export class ErrorInterceptorHelper implements HttpInterceptor {
@@ -19,7 +18,6 @@ export class ErrorInterceptorHelper implements HttpInterceptor {
           location.reload();
         }
         const error = err.error.message || err.statusText;
-        debug("App");
         return throwError(error);
       }
     ));

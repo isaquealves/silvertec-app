@@ -13,9 +13,12 @@ import { HomeComponent } from '@/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from '@/register/register.component';
-import { fakeBackendProvider } from './_helpers';
+import { fakeBackendProvider } from '@/_helpers';
 import {AlertComponent} from '@/components/alert';
-
+import { ProcessorsComponent, MainboardsComponent, MemoryComponent, GraphicsComponent, ComputerpartsComponent } from '@/_computer-parts';
+import { JoinPipe } from './join.pipe';
+import { OrderComponent } from './order/order.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,15 @@ import {AlertComponent} from '@/components/alert';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    ProcessorsComponent,
+    MainboardsComponent,
+    MemoryComponent,
+    GraphicsComponent,
+    ComputerpartsComponent,
+    JoinPipe,
+    OrderComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

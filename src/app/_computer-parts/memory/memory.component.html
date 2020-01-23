@@ -1,0 +1,26 @@
+<div id="memory-selection" [formGroup]="ordForm">
+  <div class="form-group" formGroupName="memoryStep">
+    <mat-form-field appearance="outline">
+      <mat-label for="memorymodules">Módulos de memória</mat-label>
+      <mat-select [(value)]="modmem" multiple #selectMem formControlName="memorymodules" (selectionChange)="checkMainboard($event)">
+          <mat-option *ngFor="let memmodule of memorymodules" [value]="memmodule" >{{ memmodule.name}}
+          </mat-option>
+      </mat-select>
+
+      <mat-error *ngIf="selectMem.errorState">
+        <strong>required</strong>
+      </mat-error>
+      </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <button type="button" class="btn btn-warning btn-lg" matStepperPrevious>
+    <i class="fas fa-arrow-circle-left"></i>
+    Voltar
+  </button>
+  &nbsp;
+  <button type="button" class="btn btn-primary btn-lg" matStepperNext (click)="submitMem()">
+    Prosseguir
+    <i class='fas fa-arrow-circle-right'></i>
+  </button>
+</div>

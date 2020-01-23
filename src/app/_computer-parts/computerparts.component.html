@@ -1,0 +1,51 @@
+<div id="computerorder" class="col-md-12 container">
+  <form id="ordForm" [formGroup]="orderForm">
+    <mat-horizontal-stepper #stepper [linear]="isLinear">
+      <mat-step formGroupName="processorStep"
+        [stepControl]="orderForm.get('processorStep')">
+        <ng-template matStepLabel>Selecione um processador</ng-template>
+        <app-processors [ordForm]="orderForm"></app-processors>
+      </mat-step>
+      <mat-step formGroupName="mainboardStep"
+        [stepControl]="orderForm.get('mainboardStep')">
+        <ng-template matStepLabel> Selecione uma placa-mãe</ng-template>
+        <app-mainboards [ordForm]="orderForm"></app-mainboards>
+      </mat-step>
+      <mat-step formGroupName="memoryStep"
+      [stepControl]="orderForm.get('memoryStep')">
+        <ng-template matStepLabel>Selecione os módulos de memória</ng-template>
+        <app-memory [ordForm]="orderForm"></app-memory>
+      </mat-step>
+      <mat-step formGroupName="graphicsStep"
+      [stepControl]="orderForm.get('graphicsStep')">
+        <ng-template matStepLabel>Selecione a placa de vídeo</ng-template>
+        <app-graphics [ordForm]="orderForm"></app-graphics>
+      </mat-step>
+      <mat-step formGroupName="reviewAndSubmit"
+      [stepControl]="orderForm.get('reviewAndSubmit')">
+        <ng-template matStepLabel>Revisar e enviar pedido</ng-template>
+        <dl>
+          <dt>Processador</dt>
+          <dd>{{orderForm.get('processorStep').get('processor').value.name}}</dd>
+          <dt>Placa Mãe</dt>
+          <dd>{{orderForm.get('mainboardStep').get('mainboard').value.name}}</dd>
+          <dt>Memória</dt>
+          <dd>
+            <ul>
+              <li *ngFor="let item of orderForm.get('memoryStep').get('memorymodules').value"  style="list-style:none">{{ item.name }}</li>
+            </ul>
+          </dd>
+          <dt ngif>Placa de Vídeo</dt>
+          <dd>{{orderForm.get('graphicsStep').get('graphicboards').value.manufacturer}} {{orderForm.get('graphicsStep').get('graphicboards').value.model}}</dd>
+        </dl>
+        <mat-checkbox>Está certo. É isso mesmo!</mat-checkbox>
+        <p></p>
+        <span class="float-left">
+          <button type="button" class="btn btn-primary btn-lg" (click)="submit()">
+          Finalizar
+          <i class='fas fa-arrow-circle-right'></i>
+        </button></span>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
+</div>

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "bd27212e-443d-4b4f-8404-89a332ee4e0b",
+    "name": "Placa Mãe Asus Prime",
+    "supportedProcessors": [
+      "Intel"
+    ],
+    "ramSlots": 2,
+    "maxRamTotal": 16,
+    "integratedvideo": false
+  },
+  {
+    "id": "284ac471-07e7-46e6-9aa3-0a42fe10d3cf",
+    "name": "Placa Mãe Gigabyte",
+    "supportedProcessors": [
+      "AMD"
+    ],
+    "ramSlots": 2,
+    "maxRamTotal": 16,
+    "integratedvideo": false
+  },
+  {
+    "id": "91245f7d-9a9b-4b23-a168-67f0716d8792",
+    "name": "Placa Mãe ASRock Fatal",
+    "supportedProcessors": [
+      "Intel",
+      "AMD"
+    ],
+    "ramSlots": 4,
+    "maxRamTotal": 64,
+    "integratedvideo": true
+  }
+]

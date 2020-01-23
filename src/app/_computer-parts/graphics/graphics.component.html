@@ -1,0 +1,17 @@
+<div id="graphicSelection" [formGroup]="ordForm">
+  <div class="form-group" formGroupName="graphicsStep">
+    <mat-form-field>
+      <mat-label for="graphicboards">Escolha uma placa de vídeo</mat-label>
+      <mat-select [(value)]="gboard" formControlName="graphicboards">
+          <mat-option *ngFor="let board of graphicboards" [value]="board" >{{board.manufacturer}} {{ board.model}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+    <button type="button" class="btn btn-warning" matStepperPrevious>
+      <i class="fas fa-arrow-circle-left"></i>
+      Voltar
+    </button>
+    <button type="button" class="btn btn-primary" matStepperNext>Concluir</button>
+</div>
