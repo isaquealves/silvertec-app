@@ -6,6 +6,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 ## Application structure
+```
 .
 ├── angular.json
 ├── browserslist
@@ -53,3 +54,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 └── yarn.lock
 
 17 directories, 27 files
+```
+
+``` All commits after 5534bcf are just some practice and not related to challenge itself ```
